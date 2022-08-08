@@ -1,0 +1,10 @@
+eksctl
+helm
+kubectl
+*access*
+*key*
+*token*
+eks_*
+k10_*
+ebs*
+*migration_bucket*
