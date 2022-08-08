@@ -29,11 +29,26 @@ helm install k10 kasten/k10 --namespace=kasten-io \
   --set externalGateway.create=true \
   --set metering.mode=airgap 
 
+#For Generic Volume Snapshots, use the command below
+# helm install k10 kasten/k10 --namespace=kasten-io \
+#   --set global.persistence.metering.size=1Gi \
+#   --set prometheus.server.persistentVolume.size=1Gi \
+#   --set global.persistence.catalog.size=1Gi \
+#   --set global.persistence.jobs.size=1Gi \
+#   --set global.persistence.logging.size=1Gi \
+#   --set global.persistence.grafana.size=1Gi \
+#   --set auth.tokenAuth.enabled=true \
+#   --set externalGateway.create=true \
+#   --set metering.mode=airgap \
+#   --set injectKanisterSidecar.enabled=true \
+#   --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true
+
 echo '-------Set the default ns to k10'
 kubectl config set-context --current --namespace kasten-io
 
 echo '-------Deploying a PostgreSQL database'
 kubectl create namespace yong-postgresql
+# kubectl label namespace yong-postgresql k10/injectKanisterSidecar=true  #Only for GVS snapshots
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install --namespace yong-postgresql postgres bitnami/postgresql --set primary.persistence.size=1Gi
 
