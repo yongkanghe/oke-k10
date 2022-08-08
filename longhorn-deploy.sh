@@ -1,4 +1,4 @@
-echo '-------Deploy RKE Snapshot Capabilities-------'
+echo '-------Deploy Longhorn & Snapshot Capabilities-------'
 starttime=$(date +%s)
 . ./setenv.sh
 
@@ -17,11 +17,12 @@ kubectl get settings.longhorn.io backup-target -n longhorn-system -o yaml > back
 sed -e 's#value: ""#value: "nfs://longhorn-test-nfs-svc.default:/opt/backupstore"#g' backup-target.settings.yaml > new-backup-target.settings.yaml
 kubectl replace -f new-backup-target.settings.yaml
 kubectl annotate sc longhorn storageclass.kubernetes.io/is-default-class=true
+kubectl annotate sc oci storageclass.beta.kubernetes.io/is-default-class-
 
 endtime=$(date +%s)
 duration=$(( $endtime - $starttime ))
 echo "" | awk '{print $1}'
-echo "-------Total time for RKE deployment is $(($duration / 60)) minutes $(($duration % 60)) seconds."
+echo "-------Total time for Longhorn deployment is $(($duration / 60)) minutes $(($duration % 60)) seconds."
 echo "" | awk '{print $1}'
 echo "-------Created by Yongkang"
 echo "-------Email me if any suggestions or issues he@yongkang.cloud"
