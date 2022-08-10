@@ -4,11 +4,11 @@ I just want to build an OKE Cluster (Oracle Kubernetes Engine) to play with the 
 
 It is challenging to create a OKE cluster if you are not familiar to it. After the OKE Cluster is up running, we still need to install Kasten, create a sample DB, create policies etc.. The whole process is not that simple.
 
-![image](https://pbs.twimg.com/media/FSRxfp9aIAIolN2?format=jpg&name=small)
+![image](https://pbs.twimg.com/media/FZyKDuUX0AE7kHQ?format=jpg&name=small)
 
 This script based automation allows you to build a ready-to-use Kasten K10 demo environment running on OKE in about 3 minutes. If you don't have an OKE Cluster, you can watch the Youtube video below and follow the guide to build an OKE cluster first. Once the OKE Cluster is up running, you can proceed to the next steps. 
 
-# 10 mins Build a OKE cluster
+# 10 mins Build an OKE cluster
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/DnERr8xMiuU/0.jpg)](https://www.youtube.com/watch?v=DnERr8xMiuU)
 #### Subscribe [K8s Data Management](https://www.youtube.com/channel/UCm-sw1b23K-scoVSCDo30YQ?sub_confirmation=1) Youtube Channel
 
