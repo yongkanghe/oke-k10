@@ -23,7 +23,7 @@ kubectl get nodes
 ````
 git clone https://github.com/yongkanghe/oke-k10.git
 ````
-4. Install the tools and set Alibaba Cloud Access Credentials
+4. Install the tools and set Oracle Cloud Access Credentials
 ````
 cd oke-k10;./ociprep.sh
 ````
